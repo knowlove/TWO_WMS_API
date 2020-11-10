@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>WMS仓库管理</title>
+    <link href="~/Content/layui-v2.5.6/layui/css/layui.css" rel="stylesheet" />  
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo"><img src="~/images/3.jpg" style="width:130px;height:45px" /></div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left">
+                <li class="layui-nav-item"><a href="">控制台</a></li>
+                <li class="layui-nav-item"><a href="">商品管理</a></li>
+                <li class="layui-nav-item"><a href="">用户</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">其它系统</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">邮件管理</a></dd>
+                        <dd><a href="">消息管理</a></dd>
+                        <dd><a href="">授权管理</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        贤心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">到货管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">到货登记</a></dd>
+                            <dd><a href="javascript:;">快捷到货</a></dd>
+                            <dd><a href="javascript:;">到货记录</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">入库业务</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">入库明细</a></dd>
+                            <dd><a href="javascript:;">入库明细</a></dd>
+                            <dd><a href="">入库任务单</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">出库管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">出库明细</a></dd>
+                            <dd><a href="javascript:;">出库任务单</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">调拔业务</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">调拔单列表</a></dd>
+                            <dd><a href="javascript:;">调拔单审核</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">库存管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">总库存查询</a></dd>
+                            <dd><a href="javascript:;">安全库存预警</a></dd>
+                            <dd><a href="javascript:;">移位中查询</a></dd>
+                            <dd><a href="javascript:;">库存报警看板</a></dd>
+                            <dd><a href="javascript:;">临期报警管理</a></dd>
+                            <dd><a href="javascript:;">前置仓库库存查询</a></dd>
+                            <dd><a href="javascript:;">库存分布表</a></dd>
+                            <dd><a href="javascript:;">吊牌查询</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">报损管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">报损管理</a></dd>
+                            <dd><a href="javascript:;">报损审核</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">前置仓补货管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">补货申请</a></dd>
+                            <dd><a href="javascript:;">补货管理</a></dd>
+                            <dd><a href="javascript:;">补货审核</a></dd>
+                            <dd><a href="javascript:;">补货单管理</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">盘点管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">盘点任务</a></dd>
+                            <dd><a href="javascript:;">盘点审核</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">仓库管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">仓库设置</a></dd>
+                            <dd><a href="javascript:;">库区管理</a></dd>
+                            <dd><a href="javascript:;">货位管理</a></dd>
+                            <dd><a href="javascript:;">库管员管理</a></dd>
+                            <dd><a href="javascript:;">仓库管理权限</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">系统设置</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">参数设置</a></dd>
+                            <dd><a href="javascript:;">类别顺序</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">补货管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">添加补货单</a></dd>
+                            <dd><a href="javascript:;">管理补货单</a></dd>
+                            <dd><a href="javascript:;">审核补货单</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div style="padding: 15px;">@RenderBody()</div>
+        </div>
+
+        <div class="layui-footer">
+            True courage is about knowing not when to take a life, but when to spare one.
+            真正的勇气不在于取人性命，而在于宽恕。
+        </div>
+    </div>
+    <script src="~/Content/layui-v2.5.6/layui/layui.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function () {
+            var element = layui.element;
+
+        });
+    </script>
+</body>
+</html>
