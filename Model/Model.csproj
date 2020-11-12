@@ -44,6 +44,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Dh_Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WMS_Allert.cs" />
+    <Compile Include="WMS_Category.cs" />
+    <Compile Include="WMS_Statement.cs" />
+    <Compile Include="WMS_warehouse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
