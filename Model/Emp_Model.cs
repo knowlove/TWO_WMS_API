@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Dh_Table
+    public class Emp_Model
     {
 
         public int DhId { get; set; }
         public string DhCgdh { get; set; }
         public string DhGys { get; set; }
         public string DhPl { get; set; }
-        public DateTime DhRq { get; set; }
+        public string DhRq { get; set; }
         public string DhName { get; set; }
         public string DhType { get; set; }
         public string DhYlbm { get; set; }
