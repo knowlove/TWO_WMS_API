@@ -37,5 +37,24 @@ namespace Dal
             }
             return DBHelper.GetList<WMS_Allert>(sql);
         }
+        /// <summary>
+        /// 修改上下架状态
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public int Update(WMS_Allert s)
+        {
+            string sql = $"update WMS_Statement set static={s.Static} where Id={s.Id}";
+            return DBHelper.ExecuteNonQuery(sql);
+        }
+        /// <summary>
+        /// 下拉
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> Xiala()
+        {
+            string sql = $"select * from WMS_Category";
+            return DBHelper.GetList<WMS_Allert>(sql);
+        }
     }
 }

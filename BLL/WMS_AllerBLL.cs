@@ -23,5 +23,22 @@ namespace Bll
         {
             return dal.Show(CName, WName, Coding, Name);
         }
+        /// <summary>
+        /// 修改上下架状态
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public int Update(WMS_Allert s)
+        {
+            return dal.Update(s);
+        }
+        /// <summary>
+        /// 下拉
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> Xiala()
+        {
+            return dal.Xiala();
+        }
     }
 }
