@@ -54,5 +54,12 @@ namespace Dal
             return DBHelper.GetList<Emp_Model>(sql);
 
         }
+        public int DelDhEmp(int id)
+        {
+
+            string sql = string.Format("delete from Dh_Table where DhId = {0}", id);
+            return DBHelper.ExecuteNonQuery(sql);
+
+        }
     }
 }

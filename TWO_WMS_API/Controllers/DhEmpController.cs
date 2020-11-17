@@ -54,5 +54,10 @@ namespace TWO_WMS_API.Controllers
         {
             return ed.GetXqy(id);
         }
+        [HttpPost]
+        public int DelDhEmp(int id)
+        {
+            return ed.DelDhEmp(id);
+        }
     }
 }
