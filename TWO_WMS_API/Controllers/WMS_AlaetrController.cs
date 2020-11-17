@@ -22,15 +22,31 @@ namespace TWO_WMS_API.Controllers
         /// <param name="Name">商品名</param>
         /// <returns></returns>
         [HttpGet]
-        public IHttpActionResult Show(int page= 1,int limit=10, string CName = "", string WName = "", string Coding = "", string Name = "")
+        public IHttpActionResult Show(int page,int rows, string CName = "", string WName = "", string Coding = "", string Name = "")
         {
-            List<WMS_Allert> list = bl.Show(CName,WName,Coding,Name);
-            int total = list.Count;
-            list = list.Skip((page - 1) * limit).Take(limit).ToList();
+            List<WMS_Allert> list = bl.Show();
+            if (!string.IsNullOrEmpty(CName))
+            {
+                list = list.Where(s => s.CName.Contains(CName)).ToList();
+            }
+            if (!string.IsNullOrEmpty(WName))
+            {
+                list = list.Where(s => s.WName.Contains(WName)).ToList();
+            }
+            if (!string.IsNullOrEmpty(Coding))
+            {
+                list = list.Where(s => s.Coding.Contains(Coding)).ToList();
+            }
+            if (!string.IsNullOrEmpty(Name))
+            {
+                list = list.Where(s => s.Name.Contains(Name)).ToList();
+            }
+            int totalCount = list.Count();
+            list = list.Skip((page - 1) * rows).Take(rows).ToList();
             var model = new
             {
-                taotal = total,
-                limit = list
+                taotal = totalCount,
+                rows=list
             };
             return Ok(model);
         }

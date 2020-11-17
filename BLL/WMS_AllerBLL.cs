@@ -19,9 +19,9 @@ namespace Bll
         /// <param name="Coding">编号</param>
         /// <param name="Name">商品名</param>
         /// <returns></returns>
-        public List<WMS_Allert> Show(string CName = "", string WName = "", string Coding = "", string Name = "")
+        public List<WMS_Allert> Show()
         {
-            return dal.Show(CName, WName, Coding, Name);
+            return dal.Show();
         }
         /// <summary>
         /// 修改上下架状态
