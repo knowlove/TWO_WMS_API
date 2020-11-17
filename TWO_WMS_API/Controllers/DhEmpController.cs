@@ -40,9 +40,9 @@ namespace TWO_WMS_API.Controllers
         Emp_Dal ed = new Emp_Dal();
         // GET api/
         [HttpGet]
-        public IHttpActionResult Getc(string Cgdh, string Gys, string Pl, string Cgr, string Rkzt)
+        public List<Emp_Model> Getc(string Cgdh, string Gys, string Pl, string Cgr, string Rkzt)
         {
-            return Ok(ed.Show(Cgdh, Gys, Pl, Cgr, Rkzt));
+            return ed.Show(Cgdh, Gys, Pl, Cgr, Rkzt);
         }
         [HttpGet]
         public List<Emp_Model> GetAll()
