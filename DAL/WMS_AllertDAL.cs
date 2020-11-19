@@ -18,8 +18,26 @@ namespace Dal
         /// <returns></returns>
         public List<WMS_Allert> Show() 
         {
-            string sql = $"select * from WMS_Statement s inner join WMS_Category c on c.CId=s.CategoryId join WMS_warehouse w on s.WarehouseId=w.WId ";
+            string sql = $"select * from WMS_Statement s inner join WMS_Category c on c.CId=s.CategoryId join WMS_warehouse w on s.WarehouseId=w.WId";
         
+            return DBHelper.GetList<WMS_Allert>(sql);
+        }
+        /// <summary>
+        /// 详情
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> Mingxi(int Id)
+        {
+            string sql = $"select * from WMS_Statement s inner join WMS_Category c on c.CId=s.CategoryId join WMS_warehouse w on s.WarehouseId=w.WId where Id={Id}";
+            return DBHelper.GetList<WMS_Allert>(sql);
+        }
+        /// <summary>
+        /// 报警显示
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> BaojingShow()
+        {
+            string sql = $"select * from WMS_Statement s inner join WMS_Category c on c.CId=s.CategoryId join WMS_warehouse w on s.WarehouseId=w.WId";
             return DBHelper.GetList<WMS_Allert>(sql);
         }
         /// <summary>
@@ -43,3 +61,4 @@ namespace Dal
         }
     }
 }
+

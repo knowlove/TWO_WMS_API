@@ -24,6 +24,26 @@ namespace Bll
             return dal.Show();
         }
         /// <summary>
+        /// 显示查询
+        /// </summary>
+        /// <param name="CName">仓库名</param>
+        /// <param name="WName">类别</param>
+        /// <param name="Coding">编号</param>
+        /// <param name="Name">商品名</param>
+        /// <returns></returns>
+        public List<WMS_Allert> Mingxi(int Id)
+        {
+            return dal.Mingxi(Id);
+        }
+        /// <summary>
+        /// 报警显示
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> BaojingShow()
+        {
+            return dal.BaojingShow();
+        }
+        /// <summary>
         /// 修改上下架状态
         /// </summary>
         /// <param name="s"></param>

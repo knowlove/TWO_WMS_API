@@ -13,16 +13,9 @@ namespace TWO_WMS_API.Controllers
     public class WMS_AlaetrController : ApiController
     {
         WMS_AllerBLL bl = new WMS_AllerBLL();
-        /// <summary>
-        /// 显示查询
-        /// </summary>
-        /// <param name="CName">仓库名</param>
-        /// <param name="WName">类别</param>
-        /// <param name="Coding">编号</param>
-        /// <param name="Name">商品名</param>
-        /// <returns></returns>
+        // 显示查询
         [HttpGet]
-        public IHttpActionResult Show(int page,int rows, string CName = "", string WName = "", string Coding = "", string Name = "")
+        public IHttpActionResult Show(int page,int rows, string CName = "", string WName = "", string Coding = "", string Name = "", string Manufacture="",string Valid="")
         {
             List<WMS_Allert> list = bl.Show();
             if (!string.IsNullOrEmpty(CName))
@@ -41,33 +34,46 @@ namespace TWO_WMS_API.Controllers
             {
                 list = list.Where(s => s.Name.Contains(Name)).ToList();
             }
-            int totalCount = list.Count();
+            if (!string.IsNullOrEmpty(Manufacture))
+            {
+                list = list.Where(s => s.Manufacture >= Convert.ToDateTime(Manufacture)).ToList();
+            }
+            if (!string.IsNullOrEmpty(Valid))
+            {
+                list = list.Where(s => s.Valid >= Convert.ToDateTime(Valid)).ToList();
+            }
+            int totalCount = list.Count;
             list = list.Skip((page - 1) * rows).Take(rows).ToList();
             var model = new
             {
-                taotal = totalCount,
+                total = totalCount,
                 rows=list
             };
             return Ok(model);
         }
+        // 明细
         [HttpGet]
-        /// <summary>
-        /// 修改上下架状态
-        /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        public List<WMS_Allert> Mingxi(int Id)
+        {
+            return bl.Mingxi(Id);
+        }
+        [HttpGet]
+        // 修改上下架状态
         public int Update(WMS_Allert s)
         {
             return bl.Update(s);
         }
         [HttpGet]
-        /// <summary>
-        /// 下拉
-        /// </summary>
-        /// <returns></returns>
+        //下拉
         public List<WMS_Allert> Xiala()
         {
             return bl.Xiala();
+        }
+        [HttpGet]
+        //报警显示
+        public List<WMS_Allert> BaojingShow()
+        {
+            return bl.BaojingShow();
         }
     }
 }

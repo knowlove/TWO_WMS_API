@@ -12,7 +12,7 @@ namespace Model
         public string WName { get; set; }               //仓库
         public int CId { get; set; }                   //类别ID
         public string CName { get; set; }                //类别名
-        public int Id { get; set; }                //序号
+        public int Id { get; set; }                     //序号
         public int WarehouseId { get; set; }                //所在仓库id
         public int CategoryId { get; set; }                //产品品类id
         public string Coding { get; set; }                //产品编号
