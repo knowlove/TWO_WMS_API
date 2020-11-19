@@ -59,5 +59,8 @@ namespace TWO_WMS_API.Controllers
         {
             return ed.DelDhEmp(id);
         }
+        public int UpEmp(string Gys, string Xhqy, string Cgsl, string Cgdj, string Je, string Sl, string Rq, string Bz, string id) {
+            return ed.UpEmp (Gys, Xhqy, Cgsl, Cgdj, Je, Sl, Rq, Bz, id);
+        }
     }
 }

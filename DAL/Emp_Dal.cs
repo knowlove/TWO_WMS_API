@@ -14,27 +14,27 @@ namespace Dal
         {
 
             string sql = string.Format("select * from Dh_Table where 1=1");
-            if (Cgdh.Length > 0)
+            if (Cgdh!="")
             {
 
-                sql += string.Format(" and DhCgdh like {0}", Cgdh);
+                sql += string.Format(" and DhCgdh like '%{0}%'", Cgdh);
 
             }
-            if (Gys.Length > 0)
+            if (Gys!="")
             {
-                sql += string.Format(" and DhGys like {0}", Gys);
+                sql += string.Format(" and DhGys like '%{0}%'", Gys);
             }
-            if (Pl.Length > 0)
+            if (Pl!="")
             {
-                sql += string.Format(" and DhPl like {0}", Pl);
+                sql += string.Format(" and DhPl like '%{0}%'", Pl);
             }
-            if (Cgr.Length > 0)
+            if (Cgr!="")
             {
-                sql += string.Format(" and DhName like {0}", Cgr);
+                sql += string.Format(" and DhName like '%{0}%'", Cgr);
             }
-            if (Rkzt.Length > 0)
+            if (Rkzt!="")
             {
-                sql += string.Format(" and DhType like {0}", Rkzt);
+                sql += string.Format(" and DhType like '%{0}%'", Rkzt);
             }
             return DBHelper.GetList<Emp_Model>(sql);
 
@@ -58,6 +58,13 @@ namespace Dal
         {
 
             string sql = string.Format("delete from Dh_Table where DhId = {0}", id);
+            return DBHelper.ExecuteNonQuery(sql);
+
+        }
+        public int UpEmp(string Gys,string Xhqy, string Cgsl, string Cgdj, string Je, string Sl, string Rq,string Bz,string id)
+        {
+
+            string sql = string.Format("update Dh_Table set DhGys='{0}',DhHq ='{1}' ,DhCgsl='{2}',DhJe='{3}',DhSl='{4}',DhRq='{5}',DhBz='{6}',DhDj='{7}' where DhId='{8}'", Gys, Xhqy, Cgsl, Cgdj, Je, Sl, Rq, Bz,Cgdj, id);
             return DBHelper.ExecuteNonQuery(sql);
 
         }
