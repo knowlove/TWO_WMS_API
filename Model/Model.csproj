@@ -46,7 +46,6 @@
     <Compile Include="Commodity.cs" />
     <Compile Include="Demand.cs" />
     <Compile Include="Details.cs" />
-    <Compile Include="Dh_Table.cs" />
     <Compile Include="Distribution.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Product.cs" />
