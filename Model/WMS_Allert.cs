@@ -12,7 +12,7 @@ namespace Model
         public string WName { get; set; }               //仓库
         public int CId { get; set; }                   //类别ID
         public string CName { get; set; }                //类别名
-        public int Id { get; set; }                //序号
+        public int Id { get; set; }                     //序号
         public int WarehouseId { get; set; }                //所在仓库id
         public int CategoryId { get; set; }                //产品品类id
         public string Coding { get; set; }                //产品编号
@@ -31,7 +31,18 @@ namespace Model
         public string Expiration { get; set; }                    //剩余保质期
         public string Shelf { get; set; }                    //剩余货架期
         public int Static { get; set; }                    //上架下架
-        public int Type { get; set; }                             //类型 0为废品，1为商品，2为产品
+        public int Type { get; set; }                             //类型 0为废品，1为商品，2为产品      
+        public int S_Id { get; set; }                           
+        public string S_Order { get; set; }
+        public string S_Odd { get; set; }
+        public int W_Id { get; set; }
+        public int T_Id { get; set; }
+        public string S_Sent { get; set; }
+        public string S_Entry { get; set; }
+        public int Wa_Id { get; set; }
+        public int S_Total { get; set; }
+        public string S_Dispatchers { get; set; }
+        public string S_Consignee { get; set; }
 
     }
 }
