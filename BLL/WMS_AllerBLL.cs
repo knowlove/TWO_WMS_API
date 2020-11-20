@@ -60,5 +60,13 @@ namespace Bll
         {
             return dal.Xiala();
         }
+        /// <summary>
+        /// 移库显示
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> YiKuShow()
+        {
+            return dal.YiKuShow();
+        }
     }
 }

@@ -59,6 +59,15 @@ namespace Dal
             string sql = $"select * from WMS_Category";
             return DBHelper.GetList<WMS_Allert>(sql);
         }
+        /// <summary>
+        /// 移库显示
+        /// </summary>
+        /// <returns></returns>
+        public List<WMS_Allert> YiKuShow() 
+        {
+            string sql = $"select * from  WMS_Statement w join Storage s on w.Id=s.S_Id ";
+            return DBHelper.GetList<WMS_Allert>(sql); 
+        }
     }
 }
 

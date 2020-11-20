@@ -75,5 +75,43 @@ namespace TWO_WMS_API.Controllers
         {
             return bl.BaojingShow();
         }
+        [HttpGet]
+        // 移库显示
+        public IHttpActionResult YiKuShow(int page, int rows, string CName = "", string WName = "", string Coding = "", string Name = "",string S_Sent="",string S_Entry="")
+        {
+            List<WMS_Allert> list = bl.YiKuShow();
+            if (!string.IsNullOrEmpty(CName))
+            {
+                list = list.Where(s => s.CName.Contains(CName)).ToList();
+            }
+            if (!string.IsNullOrEmpty(WName))
+            {
+                list = list.Where(s => s.WName.Contains(WName)).ToList();
+            }
+            if (!string.IsNullOrEmpty(Coding))
+            {
+                list = list.Where(s => s.Coding.Contains(Coding)).ToList();
+            }
+            if (!string.IsNullOrEmpty(Name))
+            {
+                list = list.Where(s => s.Name.Contains(Name)).ToList();
+            }
+            if (!string.IsNullOrEmpty(S_Sent))
+            {
+                list = list.Where(s => s.S_Sent.Contains(S_Sent)).ToList();
+            }
+            if (!string.IsNullOrEmpty(S_Entry))
+            {
+                list = list.Where(s => s.S_Entry.Contains(S_Entry)).ToList();
+            }
+            int totalCount = list.Count;
+            list = list.Skip((page - 1) * rows).Take(rows).ToList();
+            var model = new
+            {
+                total = totalCount,
+                rows = list
+            };
+            return Ok(model);
+        }
     }
 }
