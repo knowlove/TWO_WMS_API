@@ -36,6 +36,7 @@ namespace Dal
             {
                 sql += string.Format(" and DhType like '%{0}%'", Rkzt);
             }
+            sql += string.Format(" order by DhId desc");
             return DBHelper.GetList<Emp_Model>(sql);
 
 
