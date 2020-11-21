@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Bll;
+using G4MotnTestApi;
 using Model;
 using Newtonsoft.Json;
 
@@ -112,6 +113,49 @@ namespace TWO_WMS_API.Controllers
                 rows = list
             };
             return Ok(model);
+        }
+        //导出
+        [HttpGet]
+        public IHttpActionResult ExportExcel(string Coding = "", string Name = "")
+        {
+            try
+            {
+                //获取所有的订单信息
+                List<WMS_Allert> list = bl.Show();
+                //根据订单号查询
+                if (!string.IsNullOrEmpty(Coding))
+                {
+                    list = list.Where(s => s.Coding.Contains(Coding)).ToList();
+                }
+                if (!string.IsNullOrEmpty(Name))
+                {
+                    list = list.Where(s => s.Name.Contains(Name)).ToList();
+                }
+                //导出
+                ExcelHelper.ExportExcel<WMS_Allert>(list);
+                return Ok(1);
+            }
+            catch (Exception ex)
+            {
+                return Ok(0);
+            }
+        }
+        //导入
+        [HttpPost]
+        public IHttpActionResult ImportExcel()
+        {
+            List<WMS_Allert> list = new List<WMS_Allert>();
+            try
+            {
+                string filePath = @"D:.xls";
+                //导入
+                list = ExcelHelper.ImportExcel<WMS_Allert>(filePath);
+            }
+            catch
+            {
+
+            }
+            return Ok(list);
         }
     }
 }

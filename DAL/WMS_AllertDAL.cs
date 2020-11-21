@@ -65,7 +65,7 @@ namespace Dal
         /// <returns></returns>
         public List<WMS_Allert> YiKuShow() 
         {
-            string sql = $"select * from  WMS_Statement w join Storage s on w.Id=s.S_Id ";
+            string sql = $"select * from WMS_Statement s inner join WMS_Category c on c.CId=s.CategoryId join WMS_warehouse w on s.WarehouseId=w.WId inner join Storage g on s.Id=g.S_Id";
             return DBHelper.GetList<WMS_Allert>(sql); 
         }
     }
