@@ -68,6 +68,12 @@ namespace Dal
             return DBHelper.ExecuteNonQuery(sql);
 
         }
+        public int AddDhEmp(string DhCgdh, string DhGys, string DhPl, string DhRq, string DhName, string DhType, string DhYlbm, string DhYlmc, string DhWq, string DhYlGg, string DhCgsl, string DhBz, string DhHq, string DhJe, string DhSl, string DhDj)
+        {
+            string sql = string.Format("insert into Dh_Table values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}')", DhCgdh, DhGys, DhPl, DhRq, DhName, DhType, DhYlbm, DhYlmc, DhWq, DhYlGg, DhCgsl, DhBz, DhHq, DhJe, DhSl, DhDj);
+            return DBHelper.ExecuteNonQuery(sql);
+
+        }
 
     }
 }

@@ -169,6 +169,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\DhEmpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RedeployController.cs" />
+    <Compile Include="Controllers\RestockingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WMS_AlaetrController.cs" />
     <Compile Include="Global.asax.cs">
