@@ -50,16 +50,16 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="NPOI">
-      <HintPath>C:\Users\刘浩闯小盆友\Desktop\NPOI\NPOI.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\NPOI\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OOXML">
-      <HintPath>C:\Users\刘浩闯小盆友\Desktop\NPOI\NPOI.OOXML.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\NPOI\NPOI.OOXML.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>C:\Users\刘浩闯小盆友\Desktop\NPOI\NPOI.OpenXml4Net.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\NPOI\NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>C:\Users\刘浩闯小盆友\Desktop\NPOI\NPOI.OpenXmlFormats.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\NPOI\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
