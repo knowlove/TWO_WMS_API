@@ -140,9 +140,31 @@ namespace TWO_WMS_API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<Storage> GetStorages()
+        public List<Storage> GetStorages(string Dh = "", string Dbr = "", string Rk = "", string Rq = "")
         {
-            return bll.GetStorages();
+            List<Storage> list = bll.GetStorages();
+            //TS调拨单号查询
+            if (!string.IsNullOrEmpty(Dh))
+            {
+                list = list.Where(s => s.S_Odd.Contains(Dh)).ToList();
+            }
+            //调拨人查询
+            if (!string.IsNullOrEmpty(Dbr))
+            {
+                list = list.Where(s => s.S_Dispatchers.Contains(Dbr)).ToList();
+            }
+            //入库单号查询
+            if (!string.IsNullOrEmpty(Rk))
+            {
+                list = list.Where(s => s.S_Order.Contains(Rk)).ToList();
+            }
+            //入库日期查询
+            if (!string.IsNullOrEmpty(Rq))
+            {
+                list = list.Where(s => s.S_Entry.Contains(Rq)).ToList();
+            }
+
+            return list;
         }
 
     }

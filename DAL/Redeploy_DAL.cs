@@ -17,7 +17,7 @@ namespace Dal
         /// <returns></returns>
         public List<Redeploy> GetRedeploys()
         {
-            return DBHelper.GetList<Redeploy>(builder.Append("select * from Redeploy r join Warehouse w on w.W_Id=r.W_Id join Transfers t on t.T_Id=r.T_Id join Details d on d.R_Id=r.R_Id").ToString());
+            return DBHelper.GetList<Redeploy>(builder.Append("select * from Redeploy r join Warehouse w on w.W_Id=r.W_Id join Transfers t on t.T_Id=r.T_Id").ToString());
         }
 
         /// <summary>
