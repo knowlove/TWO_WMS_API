@@ -135,7 +135,7 @@ namespace TWO_WMS_API.Controllers
                 ExcelHelper.ExportExcel<WMS_Allert>(list);
                 return Ok(1);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return Ok(0);
             }

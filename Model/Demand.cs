@@ -36,5 +36,9 @@ namespace Model
         public int D_AuditTotal { get; set; }
         //对比需求
         public int D_Contrast { get; set; }
+        //商店名称
+        public string S_Name { get; set; }
+        //品类名称
+        public string C_Name { get; set; }
     }
 }
