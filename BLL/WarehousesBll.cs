@@ -12,9 +12,14 @@ namespace Bll
         //实例化DAL
         WarehousesDal dal = new WarehousesDal();
         //显示
-        public List<WarehousesModel> ChuKuShow()
+        public List<WMS_Allert> ChuKuShow()
         {
             return dal.ChuKuShow();
+        }
+        //详情
+        public List<WMS_Allert> ChuKuShowxq(int Id)
+        {
+            return dal.ChuKuShowxq(Id);
         }
     }
 }

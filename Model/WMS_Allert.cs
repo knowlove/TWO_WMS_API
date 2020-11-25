@@ -32,6 +32,7 @@ namespace Model
         public string Shelf { get; set; }                    //剩余货架期
         public int Static { get; set; }                    //上架下架
         public int Type { get; set; }                             //类型 0为废品，1为商品，2为产品      
+
         public int S_Id { get; set; }                           
         public string S_Order { get; set; }
         public string S_Odd { get; set; }
@@ -43,6 +44,63 @@ namespace Model
         public int S_Total { get; set; }
         public string S_Dispatchers { get; set; }
         public string S_Consignee { get; set; }
+        //序号
+        public int D_Id { get; set; }
+        //物品编码
+        public string D_Code { get; set; }
+        //物品名称
+        public string D_Name { get; set; }
+        //可用库存
+        public int D_Available { get; set; }
+        //申请数量
+        public int D_Applications { get; set; }
+        //审批数量
+        public int D_Apprvals { get; set; }
+        //已出库数量
+        public int D_Stock { get; set; }
+        //周转筐
+        public string D_Basket { get; set; }
+        //计量单位
+        public string D_Unit { get; set; }
+        //单价
+        public int D_Price { get; set; }
+        //图片
+        public string D_Img { get; set; }
+        //调拨外键
+        public int R_Id { get; set; }
+        //审核意见
+        public string A_Opinion { get; set; }
+        //备注
+        public string A_Notes { get; set; }
+        //待审核调拨总数
+        public int A_Review { get; set; }
+        public int Q_Id { get; set; }
+        //单据编号
+        public string Q_Coding { get; set; }
+        //调拨入库单号
+        public string Q_Order { get; set; }
+        //门店外键
 
+        //商品编码
+        public string Q_Code { get; set; }
+        //商品名称
+        public string Q_Name { get; set; }
+        //规格
+        public string Q_Specifications { get; set; }
+        //数量
+        public int Q_Number { get; set; }
+        //处理人
+        public string Q_Handler { get; set; }
+        //处理日期
+        public string Q_Date { get; set; }
+        //状态
+        public int Q_Status { get; set; }
+
+        public string WType { get; set; }
+        public DateTime WTime { get; set; }
+        public string WGoods { get; set; }
+        public string WCompletion { get; set; }
+
+       
     }
 }

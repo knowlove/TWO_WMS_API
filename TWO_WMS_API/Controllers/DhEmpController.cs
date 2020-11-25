@@ -24,12 +24,12 @@ namespace TWO_WMS_API.Controllers
         }
 
         // POST: api/DhEmp
-        public void Post([FromBody] string value)
+        public void Post([FromBody]string value)
         {
         }
 
         // PUT: api/DhEmp/5
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody]string value)
         {
         }
 
@@ -60,16 +60,18 @@ namespace TWO_WMS_API.Controllers
             return ed.DelDhEmp(id);
         }
         public int UpEmp(string Gys, string Xhqy, string Cgsl, string Cgdj, string Je, string Sl, string Rq, string Bz, string id) {
-            return ed.UpEmp(Gys, Xhqy, Cgsl, Cgdj, Je, Sl, Rq, Bz, id);
+            return ed.UpEmp (Gys, Xhqy, Cgsl, Cgdj, Je, Sl, Rq, Bz, id);
         }
         public int AddEmp(string DhCgdh, string DhGys, string DhPl, string DhRq, string DhName, string DhType, string DhYlbm, string DhYlmc, string DhWq, string DhYlGg, string DhCgsl, string DhBz, string DhHq, string DhJe, string DhSl, string DhDj) {
 
             return ed.AddDhEmp(DhCgdh, DhGys, DhPl, DhRq, DhName, DhType, DhYlbm, DhYlmc, DhWq, DhYlGg, DhCgsl, DhBz, DhHq, DhJe, DhSl, DhDj);
         }
         [HttpGet]
-        public List<Plb> GetPl(string Bm, string Mc) {
+        public List<Plb> GetPl(string Bm, string Mc)
+        {
             return ed.GetPl(Bm, Mc);
-        
+
         }
+
     }
 }

@@ -36,6 +36,7 @@ namespace Dal
             {
                 sql += string.Format(" and DhType like '%{0}%'", Rkzt);
             }
+            sql += string.Format(" order by DhId desc");
             return DBHelper.GetList<Emp_Model>(sql);
 
 
@@ -74,20 +75,20 @@ namespace Dal
             return DBHelper.ExecuteNonQuery(sql);
 
         }
-        public List<Plb> GetPl(string Bm,string Mc)
+        public List<Plb> GetPl(string Bm, string Mc)
         {
 
             string sql = $"select * from Plb where 1=1";
             if (Mc != "")
             {
-                sql += $" and Mc  like '%"+Mc+"%'";
-                
-             }
-             if (Bm!=null)
-                {
-                    sql += $" and Mc  like '%" + Bm + "%'";
+                sql += $" and Mc  like '%" + Mc + "%'";
+
             }
-                return DBHelper.GetList<Plb>(sql);
+            if (Bm != null)
+            {
+                sql += $" and Mc  like '%" + Bm + "%'";
+            }
+            return DBHelper.GetList<Plb>(sql);
 
 
         }

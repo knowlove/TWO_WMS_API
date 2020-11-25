@@ -9,7 +9,7 @@ namespace Model
     public class Emp_Model
     {
 
-        public int    DhId         { get; set; }
+        public int DhId         { get; set; }
         public string DhCgdh    { get; set; }
         public string DhGys     { get; set; }
         public string DhPl      { get; set; }
