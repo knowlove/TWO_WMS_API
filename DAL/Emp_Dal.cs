@@ -75,7 +75,7 @@ namespace Dal
             return DBHelper.ExecuteNonQuery(sql);
 
         }
-        public List<Plb> GetPl(string Bm, string Mc)
+        public List<Plb> GetPl(string Bm, string Mc,int Id)
         {
 
             string sql = $"select * from Plb where 1=1";
@@ -86,7 +86,11 @@ namespace Dal
             }
             if (Bm != null)
             {
-                sql += $" and Mc  like '%" + Bm + "%'";
+                sql += $" and Bm  like '%" + Bm + "%'";
+            }
+            if (Id !=0)
+            {
+                sql += $" and Id= Id";
             }
             return DBHelper.GetList<Plb>(sql);
 
