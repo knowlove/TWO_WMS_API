@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Qualified
+    public class rukuzong
     {
         //序号
         public int Q_Id { get; set; }
@@ -32,7 +32,7 @@ namespace Model
         public string Q_Date { get; set; }
         //状态
         public int Q_Status { get; set; }
-
+        //温区名称
+        public string Wa_Name { get; set; }
     }
-
 }
