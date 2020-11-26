@@ -45,6 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Redeploy_BLL.cs" />
     <Compile Include="Restocking_BLL.cs" />
+    <Compile Include="rukubll.cs" />
     <Compile Include="WMS_AllerBLL.cs" />
   </ItemGroup>
   <ItemGroup>
