@@ -59,6 +59,7 @@
     <Compile Include="Storage.cs" />
     <Compile Include="Transfers.cs" />
     <Compile Include="Warehouse.cs" />
+    <Compile Include="WarehousesModel.cs" />
     <Compile Include="Warm.cs" />
     <Compile Include="WMS_Allert.cs" />
     <Compile Include="WMS_Category.cs" />

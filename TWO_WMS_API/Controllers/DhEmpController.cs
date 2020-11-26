@@ -72,5 +72,6 @@ namespace TWO_WMS_API.Controllers
             return ed.GetPl(Bm, Mc,Id);
 
         }
+
     }
 }

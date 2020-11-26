@@ -18,17 +18,24 @@ namespace TWO_WMS_API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<Demand> GetDemands()
+        public List<Demand> GetDemands(string Bm = "", string Mc = "")
         {
             List<Demand> list = bll.GetDemands();
-            //try
-            //{
-
-            //}
-            //catch (DivideByZeroException exception)
-            //{
-            //    Console.WriteLine("出现异常");
-            //}
+            try
+            {
+                if (!string.IsNullOrEmpty(Bm))
+                {
+                    list = list.Where(s => s.D_Order.Contains(Bm)).ToList();
+                }
+                if (!string.IsNullOrEmpty(Mc))
+                {
+                    list = list.Where(s => s.D_Specifications.Contains(Mc)).ToList();
+                }
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("出现错误");
+            }
 
             return list;
         }
