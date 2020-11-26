@@ -49,6 +49,7 @@
     <Compile Include="Distribution.cs" />
     <Compile Include="Emp_Model.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="Order_Model.cs" />
     <Compile Include="Plb.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Storage.cs" />
     <Compile Include="Transfers.cs" />
     <Compile Include="Warehouse.cs" />
+    <Compile Include="WarehousesModel.cs" />
     <Compile Include="Warm.cs" />
     <Compile Include="WMS_Allert.cs" />
     <Compile Include="WMS_Category.cs" />

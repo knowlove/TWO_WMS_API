@@ -30,5 +30,11 @@ namespace Model
         public string S_Dispatchers { get; set; }
         //收货人
         public string S_Consignee { get; set; }
+        //温区名称
+        public string Wa_Name { get; set; }
+        //仓库调入名称
+        public string T_Name { get; set; }
+        //仓库名称
+        public string W_Name { get; set; }
     }
 }

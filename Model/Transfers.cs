@@ -8,9 +8,9 @@ namespace Model
 {
     public class Transfers
     {
-        //仓库调入主键
+        //调入仓库主键
         public int T_Id { get; set; }
-        //仓库调入名称
+        //调入仓库名称
         public string T_Name { get; set; }
     }
 

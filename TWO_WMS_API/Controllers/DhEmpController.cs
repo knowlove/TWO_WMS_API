@@ -66,5 +66,12 @@ namespace TWO_WMS_API.Controllers
 
             return ed.AddDhEmp(DhCgdh, DhGys, DhPl, DhRq, DhName, DhType, DhYlbm, DhYlmc, DhWq, DhYlGg, DhCgsl, DhBz, DhHq, DhJe, DhSl, DhDj);
         }
+        [HttpGet]
+        public List<Plb> GetPl(string Bm, string Mc,int Id)
+        {
+            return ed.GetPl(Bm, Mc,Id);
+
+        }
+
     }
 }

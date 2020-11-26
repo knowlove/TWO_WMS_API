@@ -1,4 +1,5 @@
 ﻿using Bll;
+using G4MotnTestApi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -18,35 +19,33 @@ namespace TWO_WMS_API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<Redeploy> GetRedeploys(/*string Dc, string Dr,*/ string Bm = "", string Mc = "", string Rq = "", string Dh = "", int pageindex = 1, int pagesize = 2)
+        public List<Redeploy> GetRedeploys(string Bm = "", string Mc = "", string Rq = "", string Dh = "", int pageindex = 1, int pagesize = 2)
         {
             List<Redeploy> list = bll.GetRedeploys();
+            try
+            {
+                //根据商品编码查询
+                if (!string.IsNullOrEmpty(Bm))
+                {
+                    list = list.Where(s => s.D_Code.Contains(Bm)).ToList();
+                }
+                //根据商品名称查询
+                if (!string.IsNullOrEmpty(Mc))
+                {
+                    list = list.Where(s => s.D_Name.Contains(Mc)).ToList();
+                }
+                //根据调拨单号查询
+                if (!string.IsNullOrEmpty(Dh))
+                {
+                    list = list.Where(s => s.R_Number.Contains(Dh)).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("出现错误");
+                throw;
+            }
 
-            ////根据调出查询
-            //if (!string.IsNullOrEmpty(Dc))
-            //{
-            //    list = list.Where(s => s.W_Name.Contains(Dc)).ToList();
-            //}
-            ////根据调入查询
-            //if (!string.IsNullOrEmpty(Dr))
-            //{
-            //    list = list.Where(s => s.T_Name.Contains(Dr)).ToList();
-            //}
-            //根据商品编码查询
-            if (!string.IsNullOrEmpty(Bm))
-            {
-                list = list.Where(s => s.D_Code.Contains(Bm)).ToList();
-            }
-            //根据商品名称查询
-            if (!string.IsNullOrEmpty(Mc))
-            {
-                list = list.Where(s => s.D_Name.Contains(Mc)).ToList();
-            }
-            //根据调拨单号查询
-            if (!string.IsNullOrEmpty(Dh))
-            {
-                list = list.Where(s => s.R_Number.Contains(Dh)).ToList();
-            }
             //分页
             list = list.Skip((pageindex - 1) * pagesize).Take(pagesize).ToList();
             return list;
@@ -123,16 +122,24 @@ namespace TWO_WMS_API.Controllers
         public List<Distribution> GetDistributions(string Bm = "", string Ztd = "")
         {
             List<Distribution> list = bll.GetDistributions();
+            try
+            {
+                if (!string.IsNullOrEmpty(Bm))
+                {
+                    list = list.Where(s => s.D_Coding.Contains(Bm)).ToList();
+                }
+                if (!string.IsNullOrEmpty(Ztd))
+                {
+                    list = list.Where(s => s.D_Point.Contains(Ztd)).ToList();
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("出现错误");
+                throw;
+            }
 
-            if (!string.IsNullOrEmpty(Bm))
-            {
-                list = list.Where(s => s.D_Coding.Contains(Bm)).ToList();
-            }
-            if (!string.IsNullOrEmpty(Ztd))
-            {
-                list = list.Where(s => s.D_Point.Contains(Ztd)).ToList();
-            }
-            return list;
         }
 
         /// <summary>
@@ -140,9 +147,57 @@ namespace TWO_WMS_API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<Storage> GetStorages()
+        public List<Storage> GetStorages(string Dh = "", string Dbr = "", string Rk = "", string Rq = "")
         {
-            return bll.GetStorages();
+            List<Storage> list = bll.GetStorages();
+            try
+            {
+                //TS调拨单号查询
+                if (!string.IsNullOrEmpty(Dh))
+                {
+                    list = list.Where(s => s.S_Odd.Contains(Dh)).ToList();
+                }
+                //调拨人查询
+                if (!string.IsNullOrEmpty(Dbr))
+                {
+                    list = list.Where(s => s.S_Dispatchers.Contains(Dbr)).ToList();
+                }
+                //入库单号查询
+                if (!string.IsNullOrEmpty(Rk))
+                {
+                    list = list.Where(s => s.S_Order.Contains(Rk)).ToList();
+                }
+                //入库日期查询
+                if (!string.IsNullOrEmpty(Rq))
+                {
+                    list = list.Where(s => s.S_Entry.Contains(Rq)).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("出现错误");
+                throw;
+            }
+            return list;
+        }
+
+        //导出
+        [HttpGet]
+        public IHttpActionResult ExportExcel()
+        {
+            try
+            {
+                //获取所有的订单信息
+                List<Storage> list = bll.GetStorages();
+
+                //导出
+                ExcelHelper.ExportExcel<Storage>(list);
+                return Ok(1);
+            }
+            catch (Exception)
+            {
+                return Ok(0);
+            }
         }
 
     }
