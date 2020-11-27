@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Qualified.cs" />
     <Compile Include="Redeploy.cs" />
+    <Compile Include="rukuzong.cs" />
     <Compile Include="Shops.cs" />
     <Compile Include="Storage.cs" />
     <Compile Include="Transfers.cs" />

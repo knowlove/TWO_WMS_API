@@ -116,21 +116,12 @@ namespace TWO_WMS_API.Controllers
         }
         //导出
         [HttpGet]
-        public IHttpActionResult ExportExcel(string Coding = "", string Name = "")
+        public IHttpActionResult ExportExcel()
         {
             try
             {
                 //获取所有的订单信息
                 List<WMS_Allert> list = bl.Show();
-                //根据订单号查询
-                if (!string.IsNullOrEmpty(Coding))
-                {
-                    list = list.Where(s => s.Coding.Contains(Coding)).ToList();
-                }
-                if (!string.IsNullOrEmpty(Name))
-                {
-                    list = list.Where(s => s.Name.Contains(Name)).ToList();
-                }
                 //导出
                 ExcelHelper.ExportExcel<WMS_Allert>(list);
                 return Ok(1);
