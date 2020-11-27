@@ -63,5 +63,32 @@ namespace TWO_WMS_API.Controllers
         {
             return Od.UpOrder(  Cgsl, Cgdj, Je, Sl,  Bz, id);
         }
+        public int AddOrder(string DhCgdh, string DhGys, string DhPl, string DhRq, string DhName, string DhType, string DhYlbm, string DhYlmc, string DhWq, string DhYlGg, string DhCgsl, string DhBz, string DhHq, string DhJe, string DhSl, string DhDj)
+        {
+
+            return Od.AddOrder(DhCgdh, DhGys, DhPl, DhRq, DhName, DhType, DhYlbm, DhYlmc, DhWq, DhYlGg, DhCgsl, DhBz, DhHq, DhJe, DhSl, DhDj);
+
+        }
+        public List<Plb> GetPl(string Bm, string Mc, int Id)
+        {
+
+            string sql = $"select * from Plb where 1=1";
+            if (Mc != "")
+            {
+                sql += $" and Mc  like '%" + Mc + "%'";
+
+            }
+            if (Bm != null)
+            {
+                sql += $" and Bm  like '%" + Bm + "%'";
+            }
+            if (Id != 0)
+            {
+                sql += $" and Id= Id";
+            }
+            return DBHelper.GetList<Plb>(sql);
+
+
+        }
     }
 }
