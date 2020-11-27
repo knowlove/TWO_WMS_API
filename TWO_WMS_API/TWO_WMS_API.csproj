@@ -175,6 +175,7 @@
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\RedeployController.cs" />
     <Compile Include="Controllers\RestockingController.cs" />
+    <Compile Include="Controllers\rukuuiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WarehousesController.cs" />
     <Compile Include="Controllers\WMS_AlaetrController.cs" />
