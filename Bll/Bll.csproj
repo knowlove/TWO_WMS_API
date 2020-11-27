@@ -50,10 +50,6 @@
     <Compile Include="WMS_AllerBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dal\Dal.csproj">
-      <Project>{b56da24b-34b3-4938-afa0-de4890293e47}</Project>
-      <Name>Dal</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{99b057e1-59da-45d8-93b7-e3d1c709066c}</Project>
       <Name>Model</Name>
